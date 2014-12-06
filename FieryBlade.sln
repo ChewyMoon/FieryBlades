@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieryBlade", "FieryBlade\FieryBlade.csproj", "{A67B9E53-B68C-429E-A784-2A38CFBA0C26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieryBlade.Engine", "FieryBlade.Engine\FieryBlade.Engine.csproj", "{DE958261-8595-4BC5-8CF3-9BD6A22EBD74}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{A67B9E53-B68C-429E-A784-2A38CFBA0C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A67B9E53-B68C-429E-A784-2A38CFBA0C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A67B9E53-B68C-429E-A784-2A38CFBA0C26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE958261-8595-4BC5-8CF3-9BD6A22EBD74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE958261-8595-4BC5-8CF3-9BD6A22EBD74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE958261-8595-4BC5-8CF3-9BD6A22EBD74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE958261-8595-4BC5-8CF3-9BD6A22EBD74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

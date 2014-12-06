@@ -65,21 +65,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\IEntity.cs" />
+    <Compile Include="Engine\Scene.cs" />
+    <Compile Include="Engine\SceneManager.cs" />
     <Compile Include="FieryBlade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenes\MainMenu\MainMenuScene.cs" />
+    <Compile Include="Util\Geometry.cs" />
     <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\TextureUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\FieryBlade.Engine\FieryBlade.Engine.csproj">
-      <Project>{de958261-8595-4bc5-8cf3-9bd6a22ebd74}</Project>
-      <Name>FieryBlade.Engine</Name>
-    </ProjectReference>
+    <Folder Include="Scenes\MainMenu\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bundoof.png">

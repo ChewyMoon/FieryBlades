@@ -15,15 +15,19 @@ namespace FieryBlade.Engine
             Entities = new List<IEntity>();
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
         }
 
-        public void Load()
+        public virtual void Load()
         {
         }
 
-        public void Update()
+        public virtual void Update()
+        {
+        }
+
+        public virtual void Draw()
         {
         }
     }

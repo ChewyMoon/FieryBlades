@@ -1,5 +1,7 @@
 ﻿#region
 
+using FieryBlade.Engine;
+using FieryBlade.Scenes.MainMenu;
 using FieryBlade.Util;
 using SharpDX;
 using SharpDX.Toolkit;
@@ -10,13 +12,13 @@ namespace FieryBlade
 {
     internal class FieryBlade : Game
     {
-        private GraphicsDeviceManager graphicsDeviceManager;
+        private GraphicsDeviceManager _graphicsDeviceManager;
 
         public FieryBlade()
         {
-            graphicsDeviceManager = new GraphicsDeviceManager(this)
+            _graphicsDeviceManager = new GraphicsDeviceManager(this)
             {
-                PreferredBackBufferWidth = 1024,
+                PreferredBackBufferWidth = 1280,
                 PreferredBackBufferHeight = 768
             };
             Logger.Log("Created GDR.");
@@ -30,11 +32,32 @@ namespace FieryBlade
         {
             Content.RootDirectory = "Content";
             Logger.Log("Core Initialized");
+
+            SceneManager.Scene = new MainMenuScene();
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color4.Black);
+
+            var currentScene = SceneManager.Scene;
+            currentScene.Draw();
+
+            foreach (var entity in currentScene.Entities)
+            {
+                entity.Draw();
+            }
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            var currentScene = SceneManager.Scene;
+            currentScene.Update();
+
+            foreach (var entity in currentScene.Entities)
+            {
+                entity.Update();
+            }
         }
     }
 }
