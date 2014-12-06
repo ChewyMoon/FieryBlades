@@ -3,40 +3,40 @@ using System.IO;
 using FieryBlade.Engine;
 using SharpDX;
 using SharpDX.Toolkit;
+using SharpDX.Toolkit.Diagnostics;
 using SharpDX.Toolkit.Graphics;
+using Logger = FieryBlade.Util.Logger;
 
 namespace FieryBlade
 {
     class FieryBlade : Game
     {
-        private SpriteBatch spriteBatch;
-        private Texture2D bundoofTexture2D;
+       
+        public static FieryBlade Instance { private set; get; }
 
         private GraphicsDeviceManager graphicsDeviceManager;
 
         public FieryBlade()
         {
-            graphicsDeviceManager = new GraphicsDeviceManager(this);
+            graphicsDeviceManager = new GraphicsDeviceManager(this)
+            {
+                PreferredBackBufferWidth = 1024,
+                PreferredBackBufferHeight = 768
+            };
+            Logger.Log("Created GDR.");
+
+            Instance = this;
         }
 
         protected override void Initialize()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
             Content.RootDirectory = "Content";
-        }
-
-        protected override void LoadContent()
-        {
-            bundoofTexture2D = Content.Load<Texture2D>("bundoof.png");
+            Logger.Log("Core Initialized");
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color4.Black);
-
-            spriteBatch.Begin();
-            spriteBatch.Draw(bundoofTexture2D, new Vector2(10, 10), Color.White);
-            spriteBatch.End();
         }
     }
 }
