@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FieryBlade.Engine
+﻿namespace FieryBlade.Engine
 {
     public class SceneManager
     {
         private static Scene _scene;
+
         public static Scene Scene
         {
             get { return _scene; }

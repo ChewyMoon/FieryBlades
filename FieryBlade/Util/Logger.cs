@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FieryBlade.Util
 {
     public enum LogLevel
     {
-        Error, Warning, Information
+        Error,
+        Warning,
+        Information
     }
 
     public class Logger
@@ -35,27 +36,25 @@ namespace FieryBlade.Util
             var compiledMessage = string.Format("[{0}] {1}", DateTime.Now, message);
             Console.WriteLine(compiledMessage);
             AppendToFile(compiledMessage);
-
         }
 
         private static void AppendToFile(string compiledMessage)
         {
             try
             {
-                var logFileName = String.Format("FieryBlades.{0}.log", DateTime.Now.ToShortDateString().Replace("/", "_"));
+                var logFileName = String.Format("FieryBlades.{0}.log",
+                    DateTime.Now.ToShortDateString().Replace("/", "_"));
                 var logNameCombinded = Path.Combine("Logs", logFileName);
 
                 if (!Directory.Exists("Logs"))
                     Directory.CreateDirectory("Logs");
 
-               File.AppendAllText(logNameCombinded, compiledMessage + Environment.NewLine);
-
+                File.AppendAllText(logNameCombinded, compiledMessage + Environment.NewLine);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            
         }
     }
 }

@@ -1,9 +1,8 @@
-﻿using System;
+﻿#region
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace FieryBlade.Engine
 {
@@ -18,18 +17,14 @@ namespace FieryBlade.Engine
 
         public void Dispose()
         {
-            
         }
 
         public void Load()
         {
-            
         }
 
         public void Update()
         {
-            
         }
-
     }
 }

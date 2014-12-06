@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region
+
 using FieryBlade.Util;
+
+#endregion
 
 namespace FieryBlade
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Logger.Log("Booting up..");
             using (var game = new FieryBlade())

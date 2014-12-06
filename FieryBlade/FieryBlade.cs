@@ -1,19 +1,15 @@
-﻿using System;
-using System.IO;
-using FieryBlade.Engine;
+﻿#region
+
+using FieryBlade.Util;
 using SharpDX;
 using SharpDX.Toolkit;
-using SharpDX.Toolkit.Diagnostics;
-using SharpDX.Toolkit.Graphics;
-using Logger = FieryBlade.Util.Logger;
+
+#endregion
 
 namespace FieryBlade
 {
-    class FieryBlade : Game
+    internal class FieryBlade : Game
     {
-       
-        public static FieryBlade Instance { private set; get; }
-
         private GraphicsDeviceManager graphicsDeviceManager;
 
         public FieryBlade()
@@ -27,6 +23,8 @@ namespace FieryBlade
 
             Instance = this;
         }
+
+        public static FieryBlade Instance { private set; get; }
 
         protected override void Initialize()
         {
